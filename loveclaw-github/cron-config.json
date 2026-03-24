@@ -1,0 +1,30 @@
+[
+  {
+    "name": "LoveClaw-每日匹配",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 0 * * *",
+      "tz": "Asia/Shanghai"
+    },
+    "payload": {
+      "kind": "agentTurn",
+      "message": "执行每日八字匹配任务。请运行: cd ~/.openclaw/workspace/skills/loveclaw/scripts && node cron.js match"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true
+  },
+  {
+    "name": "LoveClaw-晚间报告",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 20 * * *",
+      "tz": "Asia/Shanghai"
+    },
+    "payload": {
+      "kind": "agentTurn",
+      "message": "执行每日八字匹配报告。请运行: cd ~/.openclaw/workspace/skills/loveclaw/scripts && node cron.js report，然后向用户发送匹配结果报告。"
+    },
+    "sessionTarget": "isolated",
+    "enabled": true
+  }
+]
