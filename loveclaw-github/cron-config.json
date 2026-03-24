@@ -8,7 +8,7 @@
     },
     "payload": {
       "kind": "agentTurn",
-      "message": "执行每日八字匹配任务。请运行: cd ~/.openclaw/workspace/skills/loveclaw/scripts && node cron.js match"
+      "message": "执行每日八字匹配任务。请运行: cd ~/.openclaw/workspace/skills/loveclaw/scripts && node cron.js match。匹配结果已存入云端。"
     },
     "sessionTarget": "isolated",
     "enabled": true
@@ -22,7 +22,7 @@
     },
     "payload": {
       "kind": "agentTurn",
-      "message": "执行每日八字匹配报告。请运行: cd ~/.openclaw/workspace/skills/loveclaw/scripts && node cron.js report，然后向用户发送匹配结果报告。"
+      "message": "执行每日八字匹配报告。请运行: cd ~/.openclaw/workspace/skills/loveclaw/scripts && node cron.js report。这会根据每个用户登记的渠道（微信/飞书/webchat）自动推送匹配结果。请确保为每个有匹配结果的用户发送报告，如果没有匹配则发送'命运的齿轮继续转动，请期待月老明日的光临 ✨'。"
     },
     "sessionTarget": "isolated",
     "enabled": true
