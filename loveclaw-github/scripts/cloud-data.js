@@ -65,21 +65,39 @@ function saveProfilesSync(profiles) {
 // 同步获取档案
 function getProfile(userId) {
   const profiles = loadProfilesSync();
-  return profiles.find(p => p.userId === userId) || null;
+  const profile = profiles.find(p => p.userId === userId) || null;
+  if (profile) {
+    // 确保同时有 city 和 location
+    if (!profile.city && profile.location) {
+      profile.city = profile.location;
+    }
+    if (!profile.location && profile.city) {
+      profile.location = profile.city;
+    }
+  }
+  return profile;
 }
 
 // 同步保存档案
 function saveProfile(profile) {
   const profiles = loadProfilesSync();
+  
+  // 标准化字段名：location -> city
+  const normalizedProfile = {
+    ...profile,
+    city: profile.city || profile.location || ''
+  };
+  
   const index = profiles.findIndex(p => p.userId === profile.userId);
   if (index >= 0) {
-    profiles[index] = profile;
+    profiles[index] = normalizedProfile;
   } else {
-    profiles.push(profile);
+    profiles.push(normalizedProfile);
   }
   saveProfilesSync(profiles);
+  
   // 异步同步到云端
-  request('/api/profile', 'POST', profile).catch(e => console.error('云端同步失败:', e.message));
+  request('/api/profile', 'POST', normalizedProfile).catch(e => console.error('云端同步失败:', e.message));
 }
 
 // 同步删除档案
