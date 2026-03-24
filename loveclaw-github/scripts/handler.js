@@ -284,7 +284,7 @@ async function handleMessage(userId, message, userName = '用户') {
         resetUserSession(userId);
         
         return {
-          text: `🦞 爱情龙虾出动，命运的齿轮开始转动！\n\n✅ 您已报名成功，报名成功后每晚20点将会收到匹配信息！\n\n你的八字：年柱 ${baziResult.year} | 月柱 ${baziResult.month} | 日柱 ${baziResult.day} | 时柱 ${baziResult.hour}\n\n系统将在每晚 8 点为你寻找有缘人...\n今日匹配结果将于明晚 8 点公布\n\n输入「我的档案」查看信息\n输入「今日匹配」查看今日结果`
+          text: `🦞 爱情龙虾出动，命运的齿轮开始转动！\n\n✅ 您已报名成功，报名成功后每晚20点将会收到匹配信息！\n\n你的八字：年柱 ${baziResult.year} | 月柱 ${baziResult.month} | 日柱 ${baziResult.day} | 时柱 ${baziResult.hour}\n\n系统将在每晚 8 点为你寻找有缘人...\n每晚20点爱情龙虾自动为您生成匹配报告！每日限匹配一人！\n\n输入「我的档案」查看信息\n输入「今日匹配」查看今日结果`
         };
       } else if (message === '修改') {
         session.state = UserState.NAME;

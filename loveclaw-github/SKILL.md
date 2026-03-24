@@ -7,6 +7,7 @@
 ```yaml
 name: loveclaw
 description: LoveClaw 八字缘分匹配，用户输入信息后自动匹配有缘人
+handler: ./scripts/handler.js
 triggerInputs:
   开启匹配:
     next: onboarding
