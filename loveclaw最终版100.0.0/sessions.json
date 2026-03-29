@@ -1,0 +1,27 @@
+{
+  "test-user-123": {
+    "state": 1,
+    "data": {
+      "channel": "webchat"
+    }
+  },
+  "test-user-full": {
+    "state": 0,
+    "data": {
+      "phone": "13900009999"
+    }
+  },
+  "ou_fe6db6db17060625cf3b5aa309d7d85d": {
+    "state": 0,
+    "data": {
+      "phone": "18021005931"
+    }
+  },
+  "13900003333": {
+    "state": 0,
+    "data": {
+      "phone": "13900003333"
+    }
+  },
+  "_idMap": {}
+}

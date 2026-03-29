@@ -1,0 +1,16 @@
+{
+  "name": "loveclaw",
+  "version": "100.0.0",
+  "description": "LoveClaw 八字缘分匹配",
+  "main": "scripts/handler.js",
+  "scripts": {
+    "match": "node scripts/cron.js match",
+    "report": "node scripts/cron.js report"
+  },
+  "dependencies": {
+    "ali-oss": "^6.23.0",
+    "aliyun-sdk": "^1.12.10",
+    "firebase": "^10.7.0",
+    "tablestore": "^4.3.2"
+  }
+}
